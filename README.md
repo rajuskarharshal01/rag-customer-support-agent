@@ -1,78 +1,108 @@
-RAG Customer Support Agent
-Overview
+🤖 RAG Customer Support Agent
 
-This project implements a Retrieval-Augmented Generation (RAG) based AI Customer Support Agent using n8n for workflow orchestration, OpenAI for response generation, and Pinecone for semantic vector retrieval.
+An AI-powered customer support automation system built using Retrieval-Augmented Generation (RAG) architecture.
+The system automatically processes incoming emails, retrieves relevant contextual knowledge using vector search, and generates intelligent, grounded responses using a Large Language Model.
 
-The system automatically processes incoming customer emails, retrieves relevant contextual knowledge from a vector database, and generates context-aware responses using a large language model.
+Built with n8n, OpenAI, Pinecone, and Gmail API.
 
+📌 Features
 
+📩 Automatically triggers on new customer support emails
+🔎 Retrieves context-aware knowledge using vector similarity search (Pinecone)
+🧠 Uses OpenAI LLM to generate grounded responses
+✉️ Sends automated reply directly via Gmail
+⚙️ Modular workflow architecture using n8n
+🛡️ Reduces hallucination through retrieval-based grounding
 
-Problem Statement:
-Traditional AI chatbots often generate responses without grounding in company-specific knowledge, leading to hallucinations and inconsistent support quality.
+🧠 How It Works
 
+Gmail Trigger detects incoming support email
 
-This project solves that by implementing a RAG pipeline that:
-Retrieves relevant knowledge embeddings from a vector database
-Injects contextual information into the prompt
-Generates accurate and grounded responses
-Automatically replies to customer emails
-Architecture Overview
-Gmail Trigger
-Detects incoming customer support emails
-AI Agent (n8n
-Orchestrates retrieval + response logic
-Vector Retrieval (Pinecone)
-Performs semantic similarity search
-Fetches top-k relevant knowledge chunks
-OpenAI Chat Model
-Generates response using retrieved context
-Gmail Reply Node
-Sends AI-generated contextual reply
-RAG Pipeline Flow
-User sends support email
 Email content is converted into embedding
-Embedding is matched against vector database (Pinecone)
-Top relevant documents are retrieved
+
+Embedding is matched against Pinecone vector database
+
+Top relevant knowledge chunks are retrieved
+
 Retrieved context is injected into LLM prompt
-Model generates grounded response
-Automated email reply is sent
-Technologies Used
-n8n (Workflow Orchestration)
-OpenAI Chat Model (LLM)
-Pinecone (Vector Database)
+
+OpenAI generates a context-aware response
+
+System automatically replies via Gmail
+
+This ensures responses are based on company knowledge instead of generic AI outputs.
+
+🏗️ Architecture
+
+Gmail Trigger (Email Ingestion)
+
+n8n AI Agent (Workflow Orchestration)
+
+Pinecone (Vector Database Retrieval)
+
+OpenAI Chat Model (Response Generation)
+
+Gmail Reply Node (Automated Response)
+
+🛠️ Tech Stack
+
+n8n
+
+OpenAI Chat Model
+
+Pinecone
+
 Gmail API
+
 REST APIs
-Key Engineering Considerations
-Context injection to reduce hallucination
-Controlled prompt structure
-Retrieval-based grounding
-Modular workflow design for scalability
-Separation of retrieval and generation layers
 
+Vector Embeddings
 
+RAG Architecture
 
-Example Use Case
-Customer email:
-“Why hasn’t my order been delivered?”
+🎯 Example Use Case
+
+Customer Email:
+“Where is my order? It hasn’t arrived yet.”
 
 System retrieves:
-Shipping policy + delivery timelines from vector database
+Shipping policy + delivery timeline from vector database.
 
-Generated response:
-Context-aware explanation based on company policy rather than generic LLM answer.
+Generated Response:
+Context-aware explanation based on actual company knowledge instead of generic AI assumptions.
 
+🚀 Key Engineering Decisions
 
+Retrieval-first architecture to reduce hallucination
 
-Future Improvements:
-Add conversation memory support
-Implement confidence scoring
-Add fallback routing to human agent
-Add logging & monitoring layer
-Implement rate limiting & cost tracking
+Modular workflow design for scalability
 
+Context injection before generation
 
+Clean separation of retrieval and generation layers
 
-Security Considerations:
-API keys stored securely via environment variables
+🔐 Security & Configuration
+
+API keys stored via environment variables
+
 No sensitive data committed to repository
-Email content handling designed with privacy in mind
+
+Designed with controlled prompt structure
+
+📁 Repository Contents
+
+workflow-export.json → Exported n8n workflow
+
+architecture-diagram.png → System architecture diagram
+
+README.md → Project documentation
+
+🔮 Future Improvements
+
+Add conversation memory layer
+
+Add human escalation fallback
+
+Add logging and monitoring
+
+Implement confidence scoring
