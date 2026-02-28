@@ -5,6 +5,8 @@ The system automatically processes incoming emails, retrieves relevant contextua
 
 Built with n8n, OpenAI, Pinecone, and Gmail API.
 
+
+
 📌 Features
 
 📩 Automatically triggers on new customer support emails
@@ -13,6 +15,8 @@ Built with n8n, OpenAI, Pinecone, and Gmail API.
 ✉️ Sends automated reply directly via Gmail
 ⚙️ Modular workflow architecture using n8n
 🛡️ Reduces hallucination through retrieval-based grounding
+
+
 
 🧠 How It Works
 
@@ -32,6 +36,8 @@ System automatically replies via Gmail
 
 This ensures responses are based on company knowledge instead of generic AI outputs.
 
+
+
 🏗️ Architecture
 
 Gmail Trigger (Email Ingestion)
@@ -43,6 +49,8 @@ Pinecone (Vector Database Retrieval)
 OpenAI Chat Model (Response Generation)
 
 Gmail Reply Node (Automated Response)
+
+
 
 🛠️ Tech Stack
 
@@ -60,6 +68,8 @@ Vector Embeddings
 
 RAG Architecture
 
+
+
 🎯 Example Use Case
 
 Customer Email:
@@ -71,6 +81,8 @@ Shipping policy + delivery timeline from vector database.
 Generated Response:
 Context-aware explanation based on actual company knowledge instead of generic AI assumptions.
 
+
+
 🚀 Key Engineering Decisions
 
 Retrieval-first architecture to reduce hallucination
@@ -81,6 +93,8 @@ Context injection before generation
 
 Clean separation of retrieval and generation layers
 
+
+
 🔐 Security & Configuration
 
 API keys stored via environment variables
@@ -89,6 +103,8 @@ No sensitive data committed to repository
 
 Designed with controlled prompt structure
 
+
+
 📁 Repository Contents
 
 workflow-export.json → Exported n8n workflow
@@ -96,6 +112,8 @@ workflow-export.json → Exported n8n workflow
 architecture-diagram.png → System architecture diagram
 
 README.md → Project documentation
+
+
 
 🔮 Future Improvements
 
